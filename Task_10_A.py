@@ -388,7 +388,7 @@ def train(dataloader, model, device, loss_fn, optimizer, scheduler, stage, ul_da
   loss_collection = [[], [], [], [], []]
   for step, data in enumerate(dataloader):
     if adv_use_every_layer:
-      rand_layer = random.sample(named_weights, 1)[0] 
+      rand_layer = random.sample(named_weights, 1)[0] # ramdom select layer for adversarial traning.
       adv_layer = rand_layer
     else:
       adv_layer = "word_embeddings."
